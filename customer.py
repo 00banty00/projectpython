@@ -17,4 +17,5 @@ shop_dpt = input("Tell your shopping preferences as 'E', 'T', 'F' ")
 if shop_dpt == 'E':
     print("you can purchase Electronic goods")
 else:
-    print("Go to 2nd floor")
+    print("Go to 2nd floo")
+ 
