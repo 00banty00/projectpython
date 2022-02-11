@@ -12,3 +12,9 @@ if int(budget) < 1000:
     print("Too low")
 else:
     print("Enjoy shopping")
+shop_deprt = ['electronic', 'travel', 'fashion']
+shop_dpt = input("Tell your shopping preferences as 'E', 'T', 'F' ")
+if shop_dpt == 'E':
+    print("you can purchase Electronic goods")
+else:
+    print("Go to 2nd floor")
