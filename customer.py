@@ -8,7 +8,7 @@ elif len(customer) > 10:
 else:
     print("Name looks good")
 budget = input("What is your Budget ? ")
-if budget < 1000:
+if int(budget) < 1000:
     print("Too low")
 else:
-    Print("Enjoy shopping")
+    print("Enjoy shopping")
