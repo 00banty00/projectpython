@@ -3,3 +3,4 @@
 
 the customer name is Albin
 there is 1 more customer name Chandan
+added shopping preferences
