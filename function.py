@@ -16,3 +16,13 @@ print_it(10)
 print_it(10, 3.14)
 print_it(10, 3.14, "Sicilian")
 print_it(10, 3.14, "Silician", "Punekar")
+
+# Cal_sum_product()
+def cal_sum_product(x, y, z):
+    addition = x+y+z
+    prod = x*y*z
+    return (addition, prod)
+a = input("enter a")
+b = input("enter b")
+c = input("enter c")
+s,p = cal_sum_product(a,b,c)
