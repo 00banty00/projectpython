@@ -1,0 +1,37 @@
+
+6 node cluster
+16 core each node
+64 GB RAM
+
+16-1 = 15 core each node, and 1 node for OS
+
+
+3 executor per node then:
+15/3 = 5 core per executor
+
+memory:
+
+64-1 = 63 GB per node
+
+63/3 = 21 GB per executor
+
+2GB off heap memory
+
+then 19 GB Memory per executor
+
+7/100*21
+
+Dictionary:
+            It is a collection which is unordered, changeablea and indexed.
+
+
+
+
+Designed and implemented scalable data pipelines for Genentech and Roche's commercial and medical analytics platforms, leveraging AWS services (EMR, Glue, Athena, S3) and Apache Spark.
+- Developed robust ETL processes to extract, transform, and load structured and unstructured data from various sources into the data lake, ensuring data integrity and consistency.
+- Optimized data processing workflows using PySpark, SQL, and Airflow for efficient batch and streaming operations, resulting in a 25% reduction in processing time.
+- Collaborated closely with data scientists, analysts, and stakeholders to understand business requirements and deliver actionable insights through high-performance data models.
+- Implemented CI/CD practices using GitHub and AWS CodePipeline for seamless integration, testing, and deployment of data pipelines.
+- Monitored and troubleshot data pipeline issues, ensuring high availability and performance of the entire data ecosystem.
+
+Technologies: AWS (EMR, Glue, Athena, EC2, S3), Apache Spark, PySpark, SQL, Airflow, Git, GitHub, Python

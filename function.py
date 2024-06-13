@@ -29,3 +29,19 @@ b = int(input("enter b"))
 c = int(input("enter c"))
 s, p = cal_sum_product(a, b, c)
 print(s, p)
+
+# strip method
+
+name = "-----Hello World-----"
+print("string after stripping all '-' is", end="")
+print(name.strip("-"))
+
+
+name = "-----Hello World-----"
+print("string after stripping all '-' is", end="")
+print(name.lstrip("-"))
+
+
+name = "-----Hello World-----"
+print("string after stripping all '-' is", end="")
+print(name.rstrip("-"))

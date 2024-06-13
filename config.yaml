@@ -1,0 +1,9 @@
+bucket:
+  landing:
+    current: "oasis_landing"
+
+  standardization:
+    current: "oasis_standardization"
+
+  normalized:
+    current: "oasis_normalized"

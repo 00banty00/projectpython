@@ -1,0 +1,20 @@
+
+
+spark-submit \
+--deploy-mode client \
+--master yarn \
+--conf spark.shuffle.service.enabled=true \
+--jars s3://cmg-oasis-dev-commercial-code-builds/additional_jars/mysql-connector-java-8.0.26.jar,s3://cmg-oasis-dev-commercial-code-builds/additional_jars/ojdbc6-11.2.0.3.jar,s3://cmg-oasis-dev-commercial-code-builds/additional_jars/AthenaJDBC42_2.0.14.jar \
+--py-files s3://cmg-oasis-dev-commercial-code-builds/bitbucket/oasis_commercial/src/common/spark_common_functions.py,s3://cmg-oasis-dev-commercial-code-builds/bitbucket/oasis_commercial/src/input_data.py \
+--conf spark.dynamicAllocation.enabled=true \
+--conf spark.dynamicAllocation.initialExecutors=5 \
+--conf spark.dynamicAllocation.minExecutors=5 \
+--conf spark.dynamicAllocation.maxExecutors=40 \
+--conf spark.executor.cores=5 \
+--conf spark.executor.memory=32G \
+--conf spark.driver.memory=32G \
+--conf \"spark.driver.extraJavaOptions=-XX:+UseG1GC\" \
+--conf \"spark.executor.extraJavaOptions=-XX:+UseG1GC\" \
+--conf spark.bucketname.env=dev \
+--conf spark.publication.env=weekly \
+--conf spark.subject_area.env=Action_Candidate_BEM s3://cmg-oasis-dev-managed-airflow/dags/athena_table_create_partition.py

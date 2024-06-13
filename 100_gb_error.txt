@@ -1,0 +1,37 @@
+norm_claim_mkt_onc_bucket_S3 path:-> s3a://cmg-oasis-dev-claims/oasis_normalized/mkt_onc/monthly/2023/12/udm/
+Normalized norm_monthly_claim_mkt_onc_ S3 path :-> s3a://cmg-oasis-dev-hcp-omnichannel/oasis_normalized/monthly/2024/03
+
+
+24/03/28 17:05:25 ERROR YarnScheduler: Lost executor 3 on ip-10-44-9-207.us-west-2.compute.internal: Container killed by YARN for exceeding memory limits.  1.4 GB of 1.4 GB physical memory used. Consider boosting spark.yarn.executor.memoryOverhead or disabling yarn.nodemanager.vmem-check-enabled because of YARN-4714.
+24/03/28 17:05:33 ERROR YarnScheduler: Lost executor 4 on ip-10-44-9-207.us-west-2.compute.internal: Container from a bad node: container_1711643087211_0005_01_000005 on host: ip-10-44-9-207.us-west-2.compute.internal. Exit status: 137. Diagnostics: Container killed on request. Exit code is 137
+Container exited with a non-zero exit code 137
+Killed by external signal
+
+
+^CTraceback (most recent call last):
+  File "/mnt/tmp/spark-2781f299-c8e9-4508-a2eb-468ceceeed13/test_claims_mkt_onc_monthly.py", line 77, in <module>
+    norm_claim_mkt_onc_month_df = read_norm_claims_mkt_onc(spark, norm_claim_mkt_onc_bucket_name)
+  File "/mnt/tmp/spark-2781f299-c8e9-4508-a2eb-468ceceeed13/test_claims_mkt_onc_monthly.py", line 51, in read_norm_claims_mkt_onc
+    final_df.show(2)
+  File "/usr/lib/spark/python/lib/pyspark.zip/pyspark/sql/dataframe.py", line 380, in show
+  File "/usr/lib/spark/python/lib/py4j-0.10.7-src.zip/py4j/java_gateway.py", line 1255, in __call__
+  File "/usr/lib/spark/python/lib/py4j-0.10.7-src.zip/py4j/java_gateway.py", line 985, in send_command
+  File "/usr/lib/spark/python/lib/py4j-0.10.7-src.zip/py4j/java_gateway.py", line 1152, in send_command
+  File "/usr/lib64/python2.7/socket.py", line 451, in readline
+    data = self._sock.recv(self._rbufsize)
+  File "/usr/lib/spark/python/lib/pyspark.zip/pyspark/context.py", line 278, in signal_handler
+KeyboardInterrupt
+24/03/28 17:06:19 ERROR TransportResponseHandler: Still have 1 requests outstanding when connection from /10.44.9.215:42552 is closed
+[hadoop@ip-10-44-9-120 ~]$
+
+
+
+------optimization-------------
+
+def append_name(row):
+    name_list.append(row[0])
+
+df.select("Name").rdd.foreach(append_name)
+
+# Print the list
+print(name_list)
